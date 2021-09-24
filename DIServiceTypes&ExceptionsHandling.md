@@ -14,8 +14,8 @@
 --- 
 
 # ASP.NET Core Error Handling
-* An ExceptionFilterAttribute is used to collect unhandled exceptions. You can register it as a global filter, and it will function as a global exception handler. Another option is to use a custom middleware designed to do nothing but catch unhandled exceptions.
-* To handle exceptions and display user friendly messages, we need to install Microsoft.AspNetCore.Diagnostics NuGet package and add middleware in the Configure() method. If you are using Visual Studio templates to create ASP.NET Core application then this package might be already installed. If not then you can add Microsoft.AspNetCore.Diagnostics package via NuGet manager.
+* An ExceptionFilterAttribute is used to collect unhandled exceptions. You can register it as a global filter, and it will function as a global exception handler. Another option is to use a custom middleware designed to catch unhandled exceptions.
+* To handle exceptions and display user friendly messages, we need to install Microsoft.AspNetCore.Diagnostics NuGet package and add middleware in the Configure() method.
 ### The Microsoft.AspNetCore.Diagnostics package includes following extension methods to handle exceptions in different scenario:
 * **UseDeveloperExceptionPage**:The UseDeveloperExceptionPage extension method adds middleware into the request pipeline which displays developer friendly exception detail page. This helps developers in tracing errors that occur during development phase.
 * As this middleware displays sensitive information, it is advisable to add it only in development environment.
