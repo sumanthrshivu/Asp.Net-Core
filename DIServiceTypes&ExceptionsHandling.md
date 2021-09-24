@@ -10,3 +10,13 @@
 ### Add Transient
 * When we register a type as Transient, every time a new instance is created. Transient creates new instance for every service/ controller as well as for every request and every user.
 * use this when it is Light weight and stateless services.
+
+--- 
+
+# ASP.NET Core Error Handling
+* An ExceptionFilterAttribute is used to collect unhandled exceptions. You can register it as a global filter, and it will function as a global exception handler. Another option is to use a custom middleware designed to do nothing but catch unhandled exceptions.
+* To handle exceptions and display user friendly messages, we need to install Microsoft.AspNetCore.Diagnostics NuGet package and add middleware in the Configure() method. If you are using Visual Studio templates to create ASP.NET Core application then this package might be already installed. If not then you can add Microsoft.AspNetCore.Diagnostics package via NuGet manager.
+### The Microsoft.AspNetCore.Diagnostics package includes following extension methods to handle exceptions in different scenario:
+* **UseDeveloperExceptionPage**:The UseDeveloperExceptionPage extension method adds middleware into the request pipeline which displays developer friendly exception detail page. This helps developers in tracing errors that occur during development phase.
+* As this middleware displays sensitive information, it is advisable to add it only in development environment.
+*  **UseExceptionHandler**: In MVC Core application, we might want some other controller to handle all exceptions and display custom user friendly error messages. The UseExceptionHandler extension method allows us to configure custom error handling route. This is useful when an application runs under production environment.
